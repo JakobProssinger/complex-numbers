@@ -55,7 +55,7 @@ Complex Complex::sqrtc(Complex number){
 
 Complex Complex::dividc(Complex number1, Complex number2){
     Complex new_number;
-    //TODO
+    new_number.real = (number1.real * number2.real + number1.imaginary * number2.imaginary)/(number2.imaginary * number2.imaginary + number2.real * number2.real);  
     new_number.magnitude = this->Magnitude();
     new_number.phase = this->Phase();
     return new_number;
@@ -124,6 +124,6 @@ double Complex::getPhase(bool mode){
 }
 
 /*//TODO
-    overrite =, -, + to make operations with complex numbers
+    overrite ==, -, + to make operations with complex numbers
     Testcases for powc, sqrtc, dividc, multiplyc
 */
