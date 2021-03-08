@@ -25,14 +25,14 @@ class Complex{
         //toString
         std::string toEuler(bool mode);
         std::string toString(bool mode);
-        
+
         //getters and setters
         void setRealpart(double real);
         double getRealpart();
         void setImaginarypart(double imaginary);
         double getImaginarypart();
         double getMagnitude();
-        double getPhase();
+        double getPhase(bool mode);
 
 
 };

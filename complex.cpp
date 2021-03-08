@@ -1,5 +1,8 @@
+#define _USE_MATH_DEFINES
+
 #include "complex.hpp"
-#include <math.h> 
+#include <cmath>
+
 
 Complex::Complex(double real, double imaginary) : real(real), imaginary(imaginary){
     magnitude = this->Magnitude();
@@ -17,11 +20,16 @@ double Complex::Magnitude(){
     return sqrt(this->real * this->real + this->imaginary * this->imaginary);
 }
 
+double Complex::Phase(){ //Phase in radiants
+    return atan2(this->imaginary, this->real);
+}
+
+
 //!toString
 
 std::string Complex::toEuler(bool mode){
     std::string string = "";
-    if(mode){   //Degrees
+    if(mode){   //degrees
 
     } else {   //radiants
 
@@ -63,8 +71,11 @@ double Complex::getMagnitude(){
     return this->magnitude;
 }
 
-double Complex::getPhase(){
-    return this->phase;
+double Complex::getPhase(bool mode){
+    if(mode) //degrees
+        return (this->phase * 180) / M_PI;
+    
+    return this->phase; //radiants
 }
 
 /*//TODO
