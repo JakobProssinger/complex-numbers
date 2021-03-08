@@ -5,8 +5,44 @@ Complex::Complex(double real, double imaginary) : real(real), imaginary(imaginar
     magnitude = this->Magnitude();
 }
 
+Complex::Complex(Complex &number){
+    this->real = number.real;
+    this->imaginary = number.imaginary;
+    this->magnitude = number.magnitude;
+    this->phase = number.phase;
+}
+
+
 double Complex::Magnitude(){
     return sqrt(this->real * this->real + this->imaginary * this->imaginary);
+}
+
+//!toString
+
+std::string Complex::toEuler(bool mode){
+    std::string string = "";
+    if(mode){   //Degrees
+
+    } else {   //radiants
+
+    }
+    return string;
+}
+
+std::string Complex::toString(bool mode){
+    std::string string = "";
+    if(mode){   //Degrees
+
+    } else {   //radiants
+
+    }
+    return string;
+}
+
+//!Getters and Setters
+
+double Complex::getRealpart(){
+    return this->real;
 }
 
 void Complex::setRealpart(double real) {
@@ -14,8 +50,8 @@ void Complex::setRealpart(double real) {
     this->magnitude = this->Magnitude();
 }
 
-double Complex::getRealpart(){
-    return this->real;
+double Complex::getImaginarypart(){
+    return this->imaginary;
 }
 
 void Complex::setImaginarypart(double imaginary){
@@ -23,15 +59,15 @@ void Complex::setImaginarypart(double imaginary){
     this->magnitude = this->Magnitude();
 }
 
-double Complex::getImaginarypart(){
-    return this->imaginary;
-}
-
 double Complex::getMagnitude(){
     return this->magnitude;
 }
 
+double Complex::getPhase(){
+    return this->phase;
+}
+
 /*//TODO
     overrite =, -, + to make operations with complex numbers
-    
+
 */

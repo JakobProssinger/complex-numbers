@@ -12,13 +12,7 @@ class Complex{
         //constructor
         Complex();
         Complex(double a, double b);
-
-        //getters and setters
-        void setRealpart(double real);
-        double getRealpart();
-        void setImaginarypart(double imaginary);
-        double getImaginarypart();
-        double getMagnitude();
+        Complex(Complex &number);
 
         //calculations
         double Magnitude();
@@ -29,7 +23,16 @@ class Complex{
         Complex multiplyc(Complex number1, Complex number2);
         
         //toString
-        std::string toEuler(Complex number);
+        std::string toEuler(bool mode);
+        std::string toString(bool mode);
+        
+        //getters and setters
+        void setRealpart(double real);
+        double getRealpart();
+        void setImaginarypart(double imaginary);
+        double getImaginarypart();
+        double getMagnitude();
+        double getPhase();
 
 
 };
