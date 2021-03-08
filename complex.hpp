@@ -17,8 +17,9 @@ class Complex{
         //calculations
         double Magnitude();
         double Phase();
-        double squarec(Complex number);
-        double sqrtc(Complex number);
+        Complex powc(Complex number);
+        Complex powc(Complex number, double exponent);
+        Complex sqrtc(Complex number);
         Complex dividc(Complex number1, Complex number2);
         Complex multiplyc(Complex number1, Complex number2);
         
