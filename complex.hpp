@@ -14,14 +14,17 @@ class Complex{
         Complex(double a, double b);
         Complex(Complex &number);
 
+        //overloading operators 
+        Complex operator + (Complex const &number);
+        Complex operator - (Complex const &number);
+        Complex operator * (Complex const &number);
+        Complex operator / (Complex const &number);
         //calculations
         double Magnitude();
         double Phase();
         Complex powc(Complex number);
         Complex powc(Complex number, double exponent);
         Complex sqrtc(Complex number);
-        Complex dividc(Complex number1, Complex number2);
-        Complex multiplyc(Complex number1, Complex number2);
         
         //toString
         std::string toEuler(bool mode);

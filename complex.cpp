@@ -5,6 +5,12 @@
 #include <math.h>
 
 //!constructor
+Complex::Complex(){
+    real = 0;
+    imaginary = 0;
+    magnitude = 0;
+    phase = 0;
+}
 Complex::Complex(double real, double imaginary) : real(real), imaginary(imaginary){
     magnitude = this->Magnitude();
     phase = this->Phase();
@@ -16,6 +22,31 @@ Complex::Complex(Complex &number){
     this->magnitude = number.magnitude;
     this->phase = number.phase;
 }
+
+//!overloading operators
+Complex Complex::operator + (Complex const &number){
+    Complex new_number(real + number.real, imaginary + number.imaginary);
+    return new_number;
+}
+
+
+Complex Complex::operator - (Complex const &number){
+    Complex new_number(real - number.real, imaginary - number.imaginary);
+    return new_number;
+}
+
+Complex Complex::operator * (Complex const &number){
+    Complex new_number(real * number.real - imaginary * number.imaginary,imaginary * number.real + real * number.imaginary);
+    return new_number;
+}
+
+Complex Complex::operator / (Complex const &number){
+    Complex new_number( (real * number.real + imaginary * number.imaginary)/(number.imaginary * number.imaginary + number.real * number.real)
+                        ,(real * number.imaginary + imaginary * number.imaginary) / (number.imaginary * number.imaginary + number.real * number.real));
+    return new_number;
+}
+
+                    
 
 //!calculations
 double Complex::Magnitude(){
@@ -48,23 +79,6 @@ Complex Complex::sqrtc(Complex number){
     Complex new_number;
     new_number.real = sqrt(number.real);
     new_number.imaginary = sqrt(number.imaginary);
-    new_number.magnitude = this->Magnitude();
-    new_number.phase = this->Phase();
-    return new_number;
-}
-
-Complex Complex::dividc(Complex number1, Complex number2){
-    Complex new_number;
-    new_number.real = (number1.real * number2.real + number1.imaginary * number2.imaginary)/(number2.imaginary * number2.imaginary + number2.real * number2.real);  
-    new_number.magnitude = this->Magnitude();
-    new_number.phase = this->Phase();
-    return new_number;
-}
-
-Complex Complex::multiplyc(Complex number1, Complex number2){
-    Complex new_number;
-    new_number.real = number1.real * number2.real - number1.imaginary * number2.imaginary;
-    new_number.imaginary = number1.imaginary * number2.real + number1.real * number2.imaginary;
     new_number.magnitude = this->Magnitude();
     new_number.phase = this->Phase();
     return new_number;
