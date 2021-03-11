@@ -12,7 +12,7 @@ class Complex{
         //constructor
         Complex();
         Complex(double a, double b);
-        Complex(Complex &number);
+        Complex(const Complex &number);
 
         //overloading operators 
         Complex operator + (Complex const &number);

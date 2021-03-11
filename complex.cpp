@@ -16,7 +16,7 @@ Complex::Complex(double real, double imaginary) : real(real), imaginary(imaginar
     phase = this->Phase();
 }
 
-Complex::Complex(Complex &number){
+Complex::Complex(const Complex &number){
     this->real = number.real;
     this->imaginary = number.imaginary;
     this->magnitude = number.magnitude;
@@ -138,6 +138,5 @@ double Complex::getPhase(bool mode){
 }
 
 /*//TODO
-    overrite ==, -, + to make operations with complex numbers
     Testcases for powc, sqrtc, dividc, multiplyc
 */
