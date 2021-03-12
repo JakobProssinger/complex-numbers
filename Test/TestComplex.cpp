@@ -24,7 +24,7 @@ bool Test1(){
     return true;
 }
 
-/*
+
 bool Test2(){
     Complex number1(3.0, 2.0);
     Complex number2(4.0, 3.0);
@@ -34,11 +34,17 @@ bool Test2(){
         return false;
     }
 
-    if()
+    if(difference.getPhase(true) != 45.0){
+        return false;
+    }
+
+    if(difference.getMagnitude() != sqrt(2)){
+        return false;
+    } 
 
     return true;
 }
-
+/*
 bool Test3(){
     Complex number1(3.0, 2.0);
     Complex number2(4.0, 3.0);
@@ -46,7 +52,7 @@ bool Test3(){
 }
 */
 int main(){
-    if(Test1()){
+    if(Test2()){
         cout << "Everything worked out!!";
     }
     return 0;
