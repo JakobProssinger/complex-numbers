@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool Test1(){
+bool TestAddition(){
     Complex number1(2.0, 2.0);
     Complex number2(2.0, 2.0);
     Complex sum = number1 + number2;
@@ -24,8 +24,7 @@ bool Test1(){
     return true;
 }
 
-
-bool Test2(){
+bool TestSubtraktion(){
     Complex number1(3.0, 2.0);
     Complex number2(4.0, 3.0);
     Complex difference = number2 - number1;
@@ -44,16 +43,36 @@ bool Test2(){
 
     return true;
 }
-/*
-bool Test3(){
+
+bool TestMultiplication() {
     Complex number1(3.0, 2.0);
     Complex number2(4.0, 3.0);
     Complex product = number1 * number2;
+
+    if(product.getImaginarypart() != 6.0 && product.getRealpart() != 12.0){
+        return false;
+    }
+
+    if(product.getPhase(true) != 26.56505118){
+        return false;
+    }
+
+    if(product.getMagnitude() != sqrt(5) * 6){
+        return false;
+    } 
+
+    return true;
 }
-*/
+
 int main(){
-    if(Test2()){
-        cout << "Everything worked out!!";
+    if(TestAddition()){
+        cout << "Everything worked out!!\n";
+    }
+    if(TestSubtraktion()){
+        cout << "Everything worked out!!\n";
+    }
+    if(TestMultiplication()){
+        cout << "Everything worked out!!\n";
     }
     return 0;
 }

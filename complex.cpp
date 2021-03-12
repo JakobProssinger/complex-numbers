@@ -44,9 +44,7 @@ Complex Complex::operator / (Complex const &number){
     Complex new_number( (real * number.real + imaginary * number.imaginary)/(number.imaginary * number.imaginary + number.real * number.real)
                         ,(real * number.imaginary + imaginary * number.imaginary) / (number.imaginary * number.imaginary + number.real * number.real));
     return new_number;
-}
-
-                    
+}                  
 
 //!calculations
 double Complex::Magnitude(){
@@ -68,19 +66,13 @@ Complex Complex::powc(Complex number){
 
 Complex Complex::powc(Complex number, double exponent){
     Complex new_number;
-    new_number.real = pow(number.real, exponent);
-    new_number.imaginary = pow(number.imaginary, exponent);
-    new_number.magnitude = this->Magnitude();
-    new_number.phase = this->Phase();
+    //TODO
     return new_number;
 }
 
 Complex Complex::sqrtc(Complex number){
     Complex new_number;
-    new_number.real = sqrt(number.real);
-    new_number.imaginary = sqrt(number.imaginary);
-    new_number.magnitude = this->Magnitude();
-    new_number.phase = this->Phase();
+    //TODO
     return new_number;
 }
 
@@ -137,6 +129,4 @@ double Complex::getPhase(bool mode){
     return this->phase; //radiants
 }
 
-/*//TODO
-    Testcases for powc, sqrtc, dividc, multiplyc
-*/
+//TODO's: toString functions and powc and sqrtc
