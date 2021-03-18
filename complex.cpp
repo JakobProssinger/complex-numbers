@@ -80,10 +80,13 @@ Complex Complex::sqrtc(Complex number){
 
 std::string Complex::toEuler(bool mode){
     std::string string = "";
+    double magnitude = this->getMagnitude();
     if(mode){   //degrees
-    //TODO
+        double phase = this->getPhase(true);
+        string = std::to_string(magnitude) + "e^(i *" + std::to_string(phase) + "°)";
     } else {   //radiants
-    //TODO
+        double phase = this->getPhase(true);
+        string = std::to_string(magnitude) + "e^(i *" + std::to_string(phase) + "rad)";
     }
     return string;
 }
@@ -94,12 +97,12 @@ std::string Complex::toString(bool mode){
     if(mode){   //Degrees
         double phase = this->getPhase(true);
         string += std::to_string(magnitude) +" * cos(" + std::to_string(phase)
-                    + "°) + " + std::to_string(magnitude) + " * sin(" 
+                    + "°) + " + std::to_string(magnitude) + " * i sin(" 
                     + std::to_string(phase) + "°)";
     } else {   //radiants
         double phase = this->getPhase(false);
         string += std::to_string(magnitude) +" * cos(" + std::to_string(phase)
-                    + "rad) + " + std::to_string(magnitude) + " * sin(" 
+                    + "rad) + " + std::to_string(magnitude) + " * i sin(" 
                     + std::to_string(phase) + "rad)";
 
     }
